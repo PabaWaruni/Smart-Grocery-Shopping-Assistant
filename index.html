@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+  Grocery Assistant - Frontend
+  Two-column layout:
+  - Left: Grocery list, manual add form, suggestions, reminders, purchase action
+  - Right: Category browser to add items from predefined categories
+  
+  Features:
+  - Browse items by category with clickable "Add" buttons
+  - Pre-fill manual form when clicking category items
+  - Add items manually with name, unit, and optional category
+  - Remove items with one-click delete
+  - View smart suggestions (missing items, healthier alternatives)
+  - View expiry reminders
+  - Mark items as purchased
+  
+  API: Connects to http://127.0.0.1:8000 (FastAPI backend)
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Grocery Assistant</h1>
+
+    <div class="container">
+        <div class="left-column">
+            <div class="grocery-list-container">
+                <h2>Your Grocery List</h2>
+                <ul id="grocery-list"></ul>
+                <div class="add-item-form">
+                    <input type="text" id="item-name" placeholder="Item name">
+                    <select id="item-category">
+                        <option value="">Select category (optional)</option>
+                    </select>
+                    <input type="text" id="item-unit" placeholder="Unit">
+                    <div class="expiry-date-container">
+                        <label for="item-expiry-date">Expiry Date:</label>
+                        <input type="date" id="item-expiry-date">
+                    </div>
+                    <button id="add-item-btn">Add Item</button>
+                </div>
+                <button id="purchase-btn">Mark as Purchased</button>
+            </div>
+
+            <div class="suggestions-container">
+                <h2>Suggestions</h2>
+                <div class="suggestions-content">
+                    <div id="missing-items">
+                        <h3>Missing Items</h3>
+                        <ul id="missing-items-list"></ul>
+                    </div>
+                    <div id="healthier-alternatives">
+                        <h3>Healthier Alternatives</h3>
+                        <ul id="healthier-alternatives-list"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reminders-container">
+                <h2>Reminders</h2>
+                <div class="reminders-content">
+                    <div id="expiry-reminders">
+                        <h3>Expiry Reminders</h3>
+                        <ul id="expiry-reminders-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="categories-container">
+                <h2>Browse by Category</h2>
+                <div id="categories-list" class="categories-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+   
+</body>
+</html>
