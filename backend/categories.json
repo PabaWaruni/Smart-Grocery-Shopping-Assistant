@@ -1,0 +1,10 @@
+{
+    "Fruits & Vegetables": ["Apple", "Banana", "Carrot", "Broccoli", "Spinach", "Tomato", "fresh fruit"],
+    "Dairy & Eggs": ["Milk", "Yogurt", "Cheese", "Butter", "Eggs", "regular milk", "almond milk", "greek yogurt"],
+    "Meat & Fish": ["Chicken", "Beef", "Salmon", "Turkey"],
+    "Grains & Bread": ["Bread", "Rice", "Pasta", "Oats", "white bread", "brown bread", "white rice", "brown rice", "whole grain oats"],
+    "Beverages": ["Orange Juice", "Coffee", "Tea", "Water", "soda"],
+    "Snacks": ["Chips", "Nuts", "Crackers", "Cookies", "candy"],
+    "Condiments": ["Olive Oil", "Salt", "Pepper", "Soy Sauce"],
+    "Frozen": ["Frozen Vegetables", "Ice Cream", "Frozen Pizza"]
+}

@@ -1,0 +1,47 @@
+{
+    "milk": {
+        "last_purchase_date": "2025-11-10"
+    },
+    "bread": {
+        "last_purchase_date": "2025-11-10"
+    },
+    "eggs": {
+        "last_purchase_date": "2025-11-25"
+    },
+    "apple": {
+        "last_purchase_date": "2025-12-01"
+    },
+    "onion": {
+        "last_purchase_date": "2025-11-25"
+    },
+    "chicken": {
+        "last_purchase_date": "2025-11-25"
+    },
+    "tea": {
+        "last_purchase_date": "2025-11-25"
+    },
+    "chips": {
+        "last_purchase_date": "2025-11-25"
+    },
+    "oil": {
+        "last_purchase_date": "2025-11-25"
+    },
+    "salt": {
+        "last_purchase_date": "2025-11-25"
+    },
+    "spices": {
+        "last_purchase_date": "2025-11-25"
+    },
+    "ice cream": {
+        "last_purchase_date": "2025-11-25"
+    },
+    "ladies fingers": {
+        "last_purchase_date": "2025-11-25"
+    },
+    "orange": {
+        "last_purchase_date": "2025-11-25"
+    },
+    "broccoli": {
+        "last_purchase_date": "2025-11-25"
+    }
+}
