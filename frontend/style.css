@@ -512,6 +512,65 @@ li:last-child {
     }
 }
 
+@media (max-width: 480px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .add-item-form {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .add-item-form input,
+    .add-item-form select,
+    #add-item-btn {
+        width: 100%;
+        margin-bottom: 5px; /* Add some space between stacked elements */
+    }
+
+    #add-item-btn {
+        align-self: stretch;
+    }
+
+    .grocery-item {
+        padding: 12px 10px;
+    }
+
+    .remove-item-btn {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+
+    .suggestions-content,
+    .reminders-content {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .chatbot-container {
+        bottom: 10px;
+        right: 10px;
+        left: 10px; /* Make it full width on small screens */
+        width: auto; /* Override fixed width */
+    }
+
+    #chatbot-window {
+        width: auto; /* Override fixed width */
+        height: 400px;
+    }
+}
+
 /* ============ SCROLLBAR ============ */
 
 .categories-container::-webkit-scrollbar {
@@ -641,31 +700,232 @@ li:last-child {
     transition: background 0.3s ease;
 }
 
-#chatbot-send-btn:hover {
-    background: #229954;
+    #chatbot-send-btn:hover {
+        background: #229954;
+    }
+    
+    .hidden {
+        display: none !important;
+    }
+    
+    .chatbot-message {
+        padding: 10px 15px;
+        border-radius: 15px;
+        max-width: 80%;
+        line-height: 1.4;
+    }
+    
+    .user-message {
+        background: #3498db;
+        color: white;
+        align-self: flex-end;
+        border-bottom-right-radius: 3px;
+    }
+    
+    .bot-message {
+        background: #f0f1f5;
+        color: #2c3e50;
+        align-self: flex-start;
+        border-bottom-left-radius: 3px;
+    }
+    
+    /* ============ MODAL STYLES ============ */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 2000; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal.show {
+        display: flex; /* Show flex when active */
+    }
+    
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        position: relative;
+        width: 90%;
+        max-width: 500px;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+    }
+    
+    @keyframes animatetop {
+        from {top: -300px; opacity: 0}
+        to {top: 0; opacity: 1}
+    }
+    
+    .close-button {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+    }
+    
+    .close-button:hover,
+    .close-button:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    #notification-title {
+        color: #27ae60;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+        text-align: center;
+        border-bottom: 2px solid #27ae60;
+        padding-bottom: 10px;
+    }
+    
+    #notification-list {
+        list-style: none;
+        padding: 0;
+        max-height: 250px;
+        overflow-y: auto;
+    }
+    
+    #notification-list li {
+        background-color: #e8f5e9;
+        margin-bottom: 8px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 0.95em;
+        color: #2c3e50;
+    }
+    
+    #notification-list li:last-child {
+        margin-bottom: 0;
+    }
+
+/* ============ POPUP NOTIFICATION STYLES ============ */
+.popup-notification {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hidden {
-    display: none !important;
+.popup-notification .popup-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    animation-name: animatetop;
+    animation-duration: 0.4s
 }
 
-.chatbot-message {
-    padding: 10px 15px;
-    border-radius: 15px;
-    max-width: 80%;
-    line-height: 1.4;
+.popup-notification .close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-.user-message {
-    background: #3498db;
-    color: white;
-    align-self: flex-end;
-    border-bottom-right-radius: 3px;
+.popup-notification .close-button:hover,
+.popup-notification .close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.bot-message {
-    background: #f0f1f5;
+.popup-notification h3 {
     color: #2c3e50;
-    align-self: flex-start;
-    border-bottom-left-radius: 3px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.popup-notification p {
+    color: #34495e;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* ============ NOTIFICATION STYLE (LESS INTRUSIVE) ============ */
+.popup-notification.notification-style {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    max-width: 300px; /* Adjust as needed */
+    background-color: transparent; /* No overlay for notification */
+    pointer-events: none; /* Allow clicks through overlay */
+    z-index: 1000; /* Ensure it's above other content but below main modal */
+    display: none; /* Hidden by default, managed by JS */
+}
+
+.popup-notification.notification-style .popup-content {
+    background-color: #d4edda; /* Light green background for success/info */
+    color: #155724; /* Dark green text */
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    animation: slideIn 0.5s ease-out;
+    pointer-events: auto; /* Re-enable clicks on the content itself */
+}
+
+.popup-notification.notification-style h3 {
+    color: #155724; /* Darker green for title */
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.popup-notification.notification-style p {
+    color: #155724; /* Darker green for message */
+    font-size: 0.9em;
+}
+
+.popup-notification.notification-style .close-button {
+    color: #155724; /* Dark green close button */
+    right: 5px;
+    top: 5px;
+    font-size: 1.2em;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
